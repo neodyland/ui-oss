@@ -1,0 +1,32 @@
+---
+import Layout from "../layouts/Layout.astro";
+import { Button } from "../components/shadcn/ui/button";
+import { Alert } from "../components/nUI/alert";
+import { ToastProvider } from "../components/ToastProvider";
+import { CurrentToast } from "../components/ToastSection";
+import { Image } from "astro:assets";
+
+import { FaChevronUp, FaChevronDown } from "react-icons/fa";
+---
+
+<Layout title="Neody UI Components">
+    <ToastProvider client:load>
+        <h1 class="text-6xl font-bold mt-4">Components</h1>
+        <h2 class="text-4xl mt-16">Header</h2>
+        <h3 class="text-2xl mt-3">At the top of the page</h3>
+        <Button className="bg-[#711be773] mt-3">Install</Button>
+        <h2 class="text-4xl mt-16">Footer</h2>
+        <h3 class="text-2xl mt-3">At the bottom of the page</h3>
+        <Button className="bg-[#711be773] mt-3">Install</Button>
+        <h2 class="text-4xl mt-16">Alert Boxes</h2>
+        <div class="flex flex-col space-y-4">
+            <Alert type="info" title="Info" className="mt-3">This is an info alert — check it out!</Alert>
+            <Alert type="success" title="Success" className="mt-3">This is a success alert — check it out!</Alert>
+            <Alert type="warning" title="Warning" className="mt-3">This is a warning alert — check it out!</Alert>
+            <Alert type="error" title="Error" className="mt-3">This is an error alert — check it out!</Alert>
+        </div>
+        <Button className="bg-[#711be773] mt-3">Install</Button>
+        <h2 class="text-4xl mt-16">Toast (Demo currently unavailable)</h2>
+        <Button className="bg-[#711be773] mt-3">Install</Button>
+    </ToastProvider>
+</Layout>

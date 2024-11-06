@@ -43,6 +43,10 @@ const useIsWide = () => {
 	return isWide;
 };
 
+interface MenuToggleProps {
+	toggle: () => void
+}
+
 const MenuToggle: React.FC<MenuToggleProps> = ({ toggle }) => (
 	<button className="p-2 lg:hidden" onClick={toggle}>
 		<svg width="20" height="20" viewBox="0 0 23 23">

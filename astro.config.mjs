@@ -16,6 +16,7 @@ export default defineConfig({
 			social: {
 				github: "https://github.com/neodyland",
 			},
+			customCss: ["./src/docs.css"],
 			sidebar: [
 				{
 					label: "Instructions",

@@ -1,0 +1,36 @@
+---
+title: "Install Neody UI"
+---
+
+import { Tabs, TabItem } from '@astrojs/starlight/components';
+
+## Install required dependencies
+- Neody UI requires a few npm packages to be installed. Run the following command to install them:
+
+<Tabs>
+    <TabItem value="npm" label="npm">
+    ```bash
+    npm install framer-motion class-variance-authority @radix-ui/react-slot react-icons uuid
+    ```
+    </TabItem>
+    <TabItem value="pnpm" label="pnpm">
+        ```bash
+        pnpm install framer-motion class-variance-authority @radix-ui/react-slot react-icons uuid
+        ```
+    </TabItem>
+    <TabItem value="yarn" label="yarn">
+        ```bash
+        yarn add framer-motion class-variance-authority @radix-ui/react-slot react-icons uuid
+        ```
+    </TabItem>
+    <TabItem value="bun" label="bun">
+        ```bash
+        bun add framer-motion class-variance-authority @radix-ui/react-slot react-icons uuid
+        ```
+    </TabItem>
+</Tabs>
+
+## Install shadcn/ui Button
+- Some Neody UI components utilize the Button component from shadcn/ui. Follow [this guide](https://ui.shadcn.com/docs/components/button) to install it.
+
+You are now ready to use Neody UI in your project! 🎉

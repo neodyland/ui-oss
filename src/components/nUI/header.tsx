@@ -44,7 +44,7 @@ const useIsWide = () => {
 };
 
 interface MenuToggleProps {
-	toggle: () => void
+	toggle: () => void;
 }
 
 const MenuToggle: React.FC<MenuToggleProps> = ({ toggle }) => (

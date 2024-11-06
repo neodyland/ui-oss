@@ -2,7 +2,8 @@
 title: "Install Neody UI"
 ---
 
-import { Tabs, TabItem } from '@astrojs/starlight/components';
+import { Tabs, TabItem, Code } from '@astrojs/starlight/components';
+import twConfig from '../../../../../tailwind.config.mjs?raw';
 
 ## Install required dependencies
 - Neody UI requires a few npm packages to be installed. Run the following command to install them:
@@ -30,7 +31,16 @@ import { Tabs, TabItem } from '@astrojs/starlight/components';
     </TabItem>
 </Tabs>
 
+## Add to Tailwind config
+- Neody UI uses Tailwind CSS for styling. Add the following configuration to your `tailwind.config.js` file:
+- Change the font to a font of your choice. Only the colours are required.
+
+<Code code={twConfig} lang="js" title="tainwind.config.js" />
+
 ## Install shadcn/ui Button
 - Some Neody UI components utilize the Button component from shadcn/ui. Follow [this guide](https://ui.shadcn.com/docs/components/button) to install it.
+
+
+## Success!
 
 You are now ready to use Neody UI in your project! 🎉

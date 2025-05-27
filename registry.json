@@ -1,0 +1,56 @@
+{
+	"$schema": "https://ui.shadcn.com/schema/registry.json",
+	"name": "Neody UI",
+	"homepage": "https://ui.neody.land",
+	"items": [
+		{
+			"name": "alert",
+			"type": "registry:component",
+			"title": "Alert",
+			"description": "An alert component to display important messages.",
+			"files": [
+				{
+					"path": "registry/alert.tsx",
+					"type": "registry:component"
+				}
+			]
+		},
+		{
+			"name": "header",
+			"type": "registry:component",
+			"title": "Header",
+			"description": "A header for the top of the page.",
+			"registryDependencies": ["button"],
+			"files": [
+				{
+					"path": "registry/header.tsx",
+					"type": "registry:component"
+				}
+			]
+		},
+		{
+			"name": "toast",
+			"type": "registry:component",
+			"title": "Toast",
+			"description": "A toast component for displaying notifications.",
+			"files": [
+				{
+					"path": "registry/toast.tsx",
+					"type": "registry:component"
+				}
+			]
+		},
+		{
+			"name": "footer",
+			"type": "registry:component",
+			"title": "Footer",
+			"description": "A footer for the bottom of the page.",
+			"files": [
+				{
+					"path": "registry/footer.tsx",
+					"type": "registry:component"
+				}
+			]
+		}
+	]
+}

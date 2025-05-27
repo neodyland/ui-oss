@@ -1,26 +1,97 @@
 @import "tailwindcss";
+@import "fumadocs-ui/css/neutral.css";
+@import "fumadocs-ui/css/preset.css";
+@import "tw-animate-css";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
+@theme {
+	--color-snow: #f2f9ff;
+	--color-night: #0a1014;
+	--color-steel: #7f8995;
+	--color-primary: #6200ee;
+	--color-on-primary: #ffffff;
+	--color-secondary: #03dac4;
+	--color-on-secondary: #000000;
+	--color-tertiary: #3cf6e7ff;
+	--color-on-tertiary: #000000;
+	--color-background: #f2f9ff;
+	--color-on-background: #0a1014;
+	--color-surface: #ffffff;
+	--color-on-surface: #0a1014;
+	--color-outline: rgba(0, 0, 0, 0.12);
+	--color-on-error: #ffffff;
+	--color-on-success: #ffffff;
+	--color-on-warn: #ffffff;
+	--color-on-info: #ffffff;
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
+	--color-footer-background: #0a1014;
+	--color-footer-text: #f2f9ff;
+	--color-footer-border: #1f2937;
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
+	--color-hover-dark: rgba(242, 249, 255, 0.08);
+	--color-hover-light: rgba(10, 16, 20, 0.08);
+	--color-hover-snow: #d7e5ef;
+	--color-hover-night: #515253;
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+	/* Error */
+	--color-error: #f14242;
+	--color-error-50: #fef2f2;
+	--color-error-100: #fee2e2;
+	--color-error-200: #ffc9c9;
+	--color-error-300: #fda4a4;
+	--color-error-400: #f96666;
+	--color-error-500: #f14242;
+	--color-error-600: #de2424;
+	--color-error-700: #bb1a1a;
+	--color-error-800: #9a1a1a;
+	--color-error-900: #801c1c;
+	--color-error-950: #460909;
+
+	/* Success */
+	--color-success: #10b985;
+	--color-success-50: #ecfdf5;
+	--color-success-100: #d1fae6;
+	--color-success-200: #a7f3d2;
+	--color-success-300: #6ee7ba;
+	--color-success-400: #35d39d;
+	--color-success-500: #10b985;
+	--color-success-600: #05966c;
+	--color-success-700: #04785a;
+	--color-success-800: #065f48;
+	--color-success-900: #064e3d;
+	--color-success-950: #022c23;
+
+	/* Warn */
+	--color-warn: #dc9124;
+	--color-warn-50: #fdf9ed;
+	--color-warn-100: #f8edcd;
+	--color-warn-200: #f3e1a7;
+	--color-warn-300: #e9c460;
+	--color-warn-400: #e4af3b;
+	--color-warn-500: #dc9124;
+	--color-warn-600: #c26f1d;
+	--color-warn-700: #a2501b;
+	--color-warn-800: #843f1c;
+	--color-warn-900: #6d351a;
+	--color-warn-950: #3e1a0a;
+
+	/* Info */
+	--color-info: #239bd4;
+	--color-info-50: #f1f9fe;
+	--color-info-100: #e3f1fb;
+	--color-info-200: #a7d8f3;
+	--color-info-300: #89cef0;
+	--color-info-400: #4bb4e5;
+	--color-info-500: #239bd4;
+	--color-info-600: #157cb4;
+	--color-info-700: #126392;
+	--color-info-800: #135479;
+	--color-info-900: #164664;
+	--color-info-950: #0e2d43;
+
+	/* Brand */
+	--color-brand-github: #000000;
+	--color-brand-twitter: #1da1f2;
+	--color-brand-discord: #7289da;
+	--color-brand-youtube: #ff0000;
+	--color-brand-misskey: #2b90d9;
 }

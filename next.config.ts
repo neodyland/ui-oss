@@ -1,11 +1,10 @@
-import type { NextConfig } from "next";
+import { createMDX } from "fumadocs-mdx/next";
 
-const nextConfig: NextConfig = {
-  /* config options here */
+const withMDX = createMDX();
+
+/** @type {import('next').NextConfig} */
+const config = {
+	reactStrictMode: true,
 };
 
-export default nextConfig;
-
-// added by create cloudflare to enable calling `getCloudflareContext()` in `next dev`
-import { initOpenNextCloudflareForDev } from '@opennextjs/cloudflare';
-initOpenNextCloudflareForDev();
+export default withMDX(config);

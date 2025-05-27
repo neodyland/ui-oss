@@ -2,6 +2,8 @@ import React from "react";
 import { LucideIcon } from "lucide-react";
 import { tv } from "tailwind-variants";
 
+import Link from "next/link";
+
 export const footerVariants = tv({
     base: "w-full bg-footer-background",
 });
@@ -48,12 +50,12 @@ export const Footer: React.FC<FooterProps> = ({
                             <ul className="mt-2 space-y-1">
                                 {item.children.map((child) => (
                                     <li key={child.name}>
-                                        <a
+                                        <Link
                                             href={child.href}
                                             className="text-sm tracking-wide text-steel transition-colors hover:text-footer-text"
                                         >
                                             {child.name}
-                                        </a>
+                                        </Link>
                                     </li>
                                 ))}
                             </ul>
@@ -67,13 +69,13 @@ export const Footer: React.FC<FooterProps> = ({
                             <p className="text-xs tracking-wider text-gray-400">&copy; {copyRight}</p>
                             <div className="flex flex-row justify-start gap-1 lg:items-center">
                                 {social.map((item) => (
-                                    <a
+                                    <Link
                                         key={item.name}
                                         href={item.href}
                                         className="rounded-full p-2 text-steel transition-colors hover:text-footer-text"
                                     >
                                         <item.icon className="h-5 w-5" />
-                                    </a>
+                                    </Link>
                                 ))}
                             </div>
                         </div>

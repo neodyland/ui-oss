@@ -29,6 +29,18 @@
 			]
 		},
 		{
+			"name": "footer",
+			"type": "registry:component",
+			"title": "Footer",
+			"description": "A footer for the bottom of the page.",
+			"files": [
+				{
+					"path": "registry/footer.tsx",
+					"type": "registry:component"
+				}
+			]
+		},
+		{
 			"name": "toast",
 			"type": "registry:component",
 			"title": "Toast",
@@ -41,13 +53,26 @@
 			]
 		},
 		{
-			"name": "footer",
+			"name": "header-nextjs",
 			"type": "registry:component",
-			"title": "Footer",
-			"description": "A footer for the bottom of the page.",
+			"title": "Header",
+			"description": "A header for the top of the page. (Optimized for Next.js)",
+			"registryDependencies": ["button"],
 			"files": [
 				{
-					"path": "registry/footer.tsx",
+					"path": "registry/nextjs/header.tsx",
+					"type": "registry:component"
+				}
+			]
+		},
+		{
+			"name": "footer-nextjs",
+			"type": "registry:component",
+			"title": "Footer",
+			"description": "A footer for the bottom of the page. (Optimized for Next.js)",
+			"files": [
+				{
+					"path": "registry/nextjs/footer.tsx",
 					"type": "registry:component"
 				}
 			]

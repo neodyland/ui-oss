@@ -8,13 +8,13 @@
 		"rules": {
 			"recommended": true
 		},
-		"ignore": [".next/", "out/", ".vercel/", ".wrangler/"]
+		"ignore": [".next/", "out/", ".vercel/", ".wrangler/", ".open-next"]
 	},
 	"formatter": {
 		"enabled": true,
 		"indentWidth": 4,
 		"indentStyle": "tab",
-		"ignore": [".next/", "out/", ".vercel/", ".wrangler/"]
+		"ignore": [".next/", "out/", ".vercel/", ".wrangler/", ".open-next"]
 	},
 	"javascript": {
 		"formatter": {

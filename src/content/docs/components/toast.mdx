@@ -7,11 +7,11 @@ import { TypeTable } from 'fumadocs-ui/components/type-table';
 import { ComponentActions } from "@/components/componentActions";
 import { ToastExample } from "../../../components/examples/toast";
 
+<Alert title={"Note"} variant={"solid"} type={"info"}>This component uses client-side React hooks, so you must wrap it with a "use client" directive when using an SSR framework.</Alert>
+
 <ComponentActions url={"https://ui.neody.land/r/toast.json"} repourl={"https://github.com/neodyland/ui-oss/blob/master/registry/toast.tsx"}/>
 
 <ToastExample/>
-
-<Alert title={"Note"} variant={"solid"} type={"info"}>This component uses client-side React hooks, so you must wrap it with a "use client" directive when using an SSR framework.</Alert>
 
 ## Usage
 - Import and wrap your whole application with the `ToastProvider` component.

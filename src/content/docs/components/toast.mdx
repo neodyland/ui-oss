@@ -2,6 +2,116 @@
 title: Toast
 ---
 
-## Introduction
+import { Alert } from "@/components/alert";
+import { TypeTable } from 'fumadocs-ui/components/type-table';
+import { ComponentActions } from "@/components/componentActions";
+import { ToastExample } from "../../../components/examples/toast";
 
-test
+<ComponentActions url={"https://ui.neody.land/r/toast.json"} repourl={"https://github.com/neodyland/ui-oss/blob/master/registry/toast.tsx"}/>
+
+<ToastExample/>
+
+<Alert title={"Note"} variant={"solid"} type={"info"}>This component uses client-side React hooks, so you must wrap it with a "use client" directive when using an SSR framework.</Alert>
+
+## Usage
+- Import and wrap your whole application with the `ToastProvider` component.
+
+```tsx
+"use client";
+import { ToastProvider } from "@/components/toast";
+
+export default function RootLayout({
+	children,
+}: Readonly<{
+	children: React.ReactNode;
+}>) {
+	return (
+		<body>
+			<ToastProvider>{children}</ToastProvider>
+		</body>
+	);
+}
+```
+
+- Import and call the `useToast` hook in your components, and use `toast.open` to render a toast.
+
+```tsx
+"use client";
+import { useToast } from "@/components/toast";
+import { Button } from "@/components/ui/button";
+
+export function ToastExample() {
+  const toast = useToast();
+
+  return (
+    <div className="flex flex-row items-center justify-center gap-2 mb-5">
+      <Button
+        variant={"default"}
+        onClick={() => {
+          toast.open({ title: "Toast", description: "Toast description", type: "success" });
+        }}
+      >
+        Success
+      </Button>
+        <Button
+            variant={"default"}
+            onClick={() => {
+                toast.open({ title: "Toast", description: "Toast description", type: "error" });
+            }}
+        >
+            Error
+        </Button>
+        <Button
+            variant={"default"}
+            onClick={() => {
+                toast.open({ title: "Toast", description: "Toast description", type: "info" });
+            }}
+        >
+            Info
+        </Button>
+        <Button
+            variant={"default"}
+            onClick={() => {
+                toast.open({ title: "Toast", description: "Toast description", type: "warning" });
+            }}
+        >
+            Warning
+        </Button>
+    </div>
+  );
+}
+```
+
+## Props
+
+- ToastProvider does not have any props, but you can pass a `children` prop to render your application inside the provider.
+
+toast.open
+
+<TypeTable
+    type={{
+        title: {
+            description:
+                'The title of the toast. This will be displayed prominently at the top of the toast.',
+            type: 'string',
+            required: true,
+        },
+        description: {
+            description:
+                'The description of the toast. This will be displayed below the title.',
+            type: 'string',
+            required: true,
+        },
+        type: {
+            description:
+                'The type of toast. Can be one of "success", "info", "warning", or "error".',
+            type: 'union',
+            required: true,
+        },
+        duration: {
+            description:
+                'The duration in milliseconds for which the toast will be visible. Defaults to 3000ms (3 seconds).',
+            type: 'number',
+        },
+    }}
+/>

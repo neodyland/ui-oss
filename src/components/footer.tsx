@@ -25,13 +25,7 @@ export interface FooterProps {
 	children?: React.ReactNode;
 }
 
-export const Footer: React.FC<FooterProps> = ({
-	social,
-	links,
-	children,
-	className,
-	copyRight = " 2021- Neody. All rights reserved.",
-}) => {
+export const Footer: React.FC<FooterProps> = ({ social, links, children, className, copyRight }) => {
 	const maxWidth = links.length < 4 ? "max-w-4xl" : "max-w-5xl";
 
 	return (

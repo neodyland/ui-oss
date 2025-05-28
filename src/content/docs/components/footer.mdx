@@ -2,4 +2,120 @@
 title: Footer
 ---
 
-WIP
+import { TypeTable } from 'fumadocs-ui/components/type-table';
+import { ComponentActions } from "@/components/componentActions";
+
+<ComponentActions url={"https://ui.neody.land/r/footer.json"} nextjsurl={"https://ui.neody.land/r/footer-nextjs.json"} repourl={"https://github.com/neodyland/ui-oss/blob/master/registry/footer.tsx"}/>
+
+## Usage
+- Organizing the links in a seperate object is recommended, as it allows for easier management and updates.
+
+```tsx
+import { Github, Twitter } from "lucide-react";
+
+const social = [
+    {
+        name: "GitHub",
+        href: "https://github.com/neodyland",
+        color: "hover:text-github hover:bg-github",
+        icon: Github,
+    },
+    {
+        name: "Twitter",
+        href: "https://x.com/neodyland",
+        color: "hover:text-twitter hover:bg-twitter",
+        icon: Twitter,
+    },
+];
+
+const links = [
+    {
+        name: "Resources",
+        children: [
+                    {
+                        name: "About Us",
+                        href: "/about",
+                    },
+                    {
+                        name: "Partners",
+                        href: "/partners",
+                    },
+                    {
+                        name: "Services",
+                        href: "/services",
+                    },
+                ],
+    },
+    {
+        name: "Support",
+        children: [
+                    {
+                        name: "Discord",
+                        href: "https://discord.gg/aaaaaa",
+                    },
+                    {
+                        name: "Contact",
+                        href: "/contact",
+                    },
+                ],
+    },
+    {
+        name: "Legal",
+        children: [
+                    {
+                        name: "Terms",
+                        href: "/legal/terms",
+                    },
+                    {
+                        name: "Privacy",
+                        href: "/legal/privacy",
+                    },
+                    {
+                        name: "特定商取引法に基づく表記",
+                        href: "/legal/jp-payments",
+                    },
+                ],
+    },
+];
+```
+- Then, you can use the `Footer` component like this:
+
+```tsx
+<Footer
+    social={social}
+    links={links}
+    copyRight={`2020-${new Date().getFullYear()} Neody. All rights reserved.`}
+    className="text-white font-bold bg-black"
+/>
+```
+- Take a look at the footer on this site's homepage to see it in action.
+
+## Props
+
+<TypeTable
+    type={{
+        social: {
+            description:
+                'Social media links and icons. The icon should be a Lucide icon component.',
+            type: 'Social object array',
+            required: true,
+        },
+        links: {
+            description:
+                'Links to various sections of the site. Each link can have a name and an array of children links.',
+            type: 'Links object array',
+            required: true,
+        },
+        copyRight: {
+            description:
+                'The copyright text to display in the footer.',
+            type: 'string',
+            required: true,
+        },
+        children: {
+            description:
+                'Any extra content you want to include in the footer.',
+            type: 'ReactNode',
+        },
+    }}
+/>

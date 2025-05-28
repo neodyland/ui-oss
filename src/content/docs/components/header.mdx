@@ -2,4 +2,141 @@
 title: Header
 ---
 
-WIP
+import { Alert } from "@/components/alert";
+import { TypeTable } from 'fumadocs-ui/components/type-table';
+import { ComponentActions } from "@/components/componentActions";
+
+<Alert title={"Note"} variant={"solid"} type={"info"}>This component uses client-side React hooks, so you must wrap it with a "use client" directive when using an SSR framework.</Alert>
+
+<ComponentActions url={"https://ui.neody.land/r/header.json"} nextjsurl={"https://ui.neody.land/r/header-nextjs.json"} repourl={"https://github.com/neodyland/ui-oss/blob/master/registry/header.tsx"}/>
+
+## Usage
+- Organizing the links in a seperate object is recommended, as it allows for easier management and updates.
+
+```tsx
+const navigation = [
+    {
+        name: "Services",
+        href: "/services",
+    },
+    {
+        name: "News",
+        href: "https://news.neody.land/"
+    },
+    {
+        name: "About Us",
+        href: "/about",
+    },
+    {
+        name: "Terms",
+        href: "/terms",
+    },
+    {
+        name: "Privacy",
+        href: "/privacy",
+    },
+    {
+        name: "Partners",
+        href: "/partners",
+    },
+];
+
+const buttons = [
+    {
+        href: "https://my.mikandev.com/",
+        title: "My Account",
+    },
+    {
+        title: "🌎",
+        onClick: () => {
+            changeLanguage();
+            },
+    },
+];
+```
+
+- Then, you can use the `Header` component like this:
+
+```tsx
+import Logo from "@/assets/logo.svg";
+
+<Header
+    navigation={nav}
+    buttons={buttons}
+    className="text-white"
+    color="#FF9900"
+    brand={{
+            showTitle: false,
+            name: "Neodyland",
+            href: "/",
+            logo: Logo.src,
+        }}
+/>
+```
+
+- You can also wrap a React component around the `Header` component to add additional functionality, such as a language switcher or an image.
+
+```tsx
+import Logo from "@/assets/logo.svg";
+import Wordmark from "@/assets/wordmark.svg";
+
+import Image from "next/image";
+import Link from "next/link";
+
+<Header
+    navigation={nav}
+    buttons={buttons}
+    className="text-white"
+    color="#FF9900"
+    brand={{
+            showTitle: false,
+            name: "Neodyland",
+            href: "/",
+            logo: Logo.src,
+        }}
+>
+    <Link href="/">
+        <Image
+            src={Wordmark.src}
+            alt="Neodyland"
+            width={400}
+            height={400}
+        />
+    </Link>
+</Header>
+```
+- Take a look at the header on this site's homepage to see it in action.
+
+## Props
+
+<TypeTable
+    type={{
+        navigation: {
+            description:
+                'Navigation links for the header. Each link can have a name and an href.',
+            type: 'Navigation object array',
+            required: true,
+        },
+        buttons: {
+            description:
+                'Buttons to display in the header. Each button can have a title, href, or an onClick function.',
+            type: 'Buttons object array',
+        },
+        color: {
+            description:
+                'The color of the header. This will be used as the background color, and for when links are hovered.',
+            type: 'string',
+        },
+        brand: {
+            description:
+                'The logo and text to display in the header. The logo should be a URL to an image.',
+            type: 'Brand object',
+            required: true,
+        },
+        children: {
+            description:
+                'Any extra content you want to include in the header.',
+            type: 'ReactNode',
+        },
+    }}
+/>

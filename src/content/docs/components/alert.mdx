@@ -2,9 +2,21 @@
 title: Alert
 ---
 import { Alert } from "@/components/alert";
+import { TypeTable } from 'fumadocs-ui/components/type-table';
 import { ComponentActions } from "@/components/componentActions";
 
-<ComponentActions url={"https://example.com"} nextjsurl={"https://example.com"}/>
+<ComponentActions url={"https://ui.neody.land/r/alert.json"} repourl={"https://github.com/neodyland/ui-oss/blob/master/registry/alert.tsx"}/>
+
+## Usage
+
+```tsx
+import { Alert } from "@/components/ui/alert";
+
+<Alert title={"Success"} variant={"solid"} type={"success"}>This is a success alert.</Alert>
+<Alert title={"Info"} variant={"solid"} type={"info"}>This is an info alert.</Alert>
+<Alert title={"Warning"} variant={"solid"} type={"warning"}>This is a warning alert.</Alert>
+<Alert title={"Error"} variant={"solid"} type={"error"}>This is an error alert.</Alert>
+```
 
 <div className={"flex flex-col gap-4"}>
 <Alert title={"Success"} variant={"solid"} type={"success"}>This is a success alert.</Alert>
@@ -12,3 +24,34 @@ import { ComponentActions } from "@/components/componentActions";
 <Alert title={"Warning"} variant={"solid"} type={"warning"}>This is a warning alert.</Alert>
 <Alert title={"Error"} variant={"solid"} type={"error"}>This is an error alert.</Alert>
 </div>
+
+## Props
+
+<TypeTable
+    type={{
+        type: {
+            description:
+                'The type of alert. Can be one of "success", "info", "warning", or "error".',
+            type: 'union',
+            default: 'info',
+        },
+        title: {
+            description:
+                'The title of the alert.',
+            type: 'string',
+            required: true,
+        },
+        children: {
+            description:
+                'The content of the alert.',
+            type: 'ReactNode',
+            required: true,
+        },
+        variant: {
+            description:
+                'The variant of the alert. Can be one of "solid" or "outline".',
+            type: 'union',
+            default: 'solid',
+        },
+    }}
+/>

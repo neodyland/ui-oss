@@ -1,4 +1,3 @@
-import { RootProvider } from "fumadocs-ui/provider";
 import type { Metadata } from "next";
 import { Inter, Noto_Sans_JP } from "next/font/google";
 import "./globals.css";
@@ -21,9 +20,7 @@ export default function RootLayout({
 }>) {
 	return (
 		<html lang="en">
-			<body className={`${inter.variable} ${noto_sans_jp.variable} antialiased`}>
-				<RootProvider>{children}</RootProvider>
-			</body>
+			<body className={`${inter.variable} ${noto_sans_jp.variable} antialiased`}>{children}</body>
 		</html>
 	);
 }

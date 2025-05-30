@@ -1,3 +1,4 @@
+"use client";
 import React, { useCallback, useEffect } from "react";
 import { type ComponentPropsWithoutRef, forwardRef, useState } from "react";
 import { tv } from "tailwind-variants";
@@ -273,7 +274,7 @@ export const Header = forwardRef<HTMLDivElement, HeaderProps>(
 			base: "fixed inset-x-0 top-0 z-50 py-2 transition-[padding-top,padding-bottom,box-shadow] ease-in-out lg:py-0 text-white",
 			variants: {
 				isScrolled: {
-					true: "border-b border-outline backdrop-blur backdrop-opacity-50",
+					true: "border-b backdrop-blur-2xl",
 					false: "bg-transparent lg:py-4",
 				},
 			},

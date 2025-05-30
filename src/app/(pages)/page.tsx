@@ -13,7 +13,7 @@ export default function Home() {
 			<Alert title={"Cool!"} variant={"solid"} type={"success"}>
 				Neody UI is now open-source and free to use!
 			</Alert>
-			<div className="h-screen flex flex-col items-center justify-center">
+			<div className="h-screen flex flex-col items-center justify-center text-center">
 				<h1 className="text-black font-bold text-4xl">Simple, stylish components</h1>
 				<h1 className="text-black text-2xl mt-2">for your apps</h1>
 				<p className="text-gray-500 text-sm mt-5">Used in production by</p>

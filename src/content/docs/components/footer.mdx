@@ -88,6 +88,32 @@ const links = [
     className="text-white font-bold bg-black"
 />
 ```
+
+- You can also wrap a React component around the `Footer` component to add additional functionality, such as a language switcher or an image.
+
+```tsx
+import Wordmark from "@/assets/wordmark.svg";
+
+import Image from "next/image";
+import Link from "next/link";
+
+<Footer
+    social={social}
+    links={links}
+    copyRight={`2020-${new Date().getFullYear()} Neody. All rights reserved.`}
+    className="text-white font-bold bg-black"
+>
+    <Link href="/">
+        <Image
+            src={Wordmark.src}
+            alt="Neodyland"
+            width={400}
+            height={400}
+        />
+    </Link>
+</Footer>
+```
+
 - Take a look at the footer on this site's homepage to see it in action.
 
 ## Props
